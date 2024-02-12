@@ -1,0 +1,12 @@
+<div>
+    <h1>Sign Up</h1>
+    {% for message in message %}
+    <h3> {{ message }} </h3>
+    {% endfor %}
+
+    <form method="POST" action="{% url 'register_user' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</div>

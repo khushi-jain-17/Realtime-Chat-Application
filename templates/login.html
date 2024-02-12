@@ -1,0 +1,23 @@
+
+{% for message in messages %}
+<h3> {{ message }}</h3>
+{% endfor %}
+<h1>Login</h1>
+
+<form method="POST" action="{% url 'login_user' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input type="text" class="form-control" name="username" placeholder="Username"required>
+    </div>
+    <br/>
+    <div class="mb03">
+        <input type="password" name="password" placeholder="Password"required>
+    </div>
+    <br/>
+    <button type="submit" clas="btn btn-secondary">Login</button>
+</form>
+<br/>
+<h3><a href="{% url 'register_user' %}">Sign Up</a>  </h3>
+
+
+

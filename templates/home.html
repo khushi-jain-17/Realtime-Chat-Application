@@ -1,3 +1,11 @@
+{% if user.is_authenticated %}
+
+<h3><a href="{% url 'logout_user' %}">Logout</a> </h3>
+
+{% for message in messages %}
+<h3> {{ message }} </h3>
+{% endfor %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -105,3 +113,11 @@ body {
 </div>
 </body>
 </html>
+
+{% else %}
+<h3><a href="{% url 'login_user' %}">Login</a>  </h3>
+</br/>
+<p>Please Login</p>
+
+{% endif %}
+
